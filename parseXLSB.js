@@ -7,10 +7,44 @@ async function getSessionId(url) {
     await page.setViewport({ width: 1280, height: 800 });
 
     try {
-        await page.goto(url, { waitUntil: 'load' });
+        await page.goto(url, { waitUntil: 'networkidle0' }); // Wait until the network activity is idle
 
-        const sessionIdInput = await page.waitForSelector('input[name="m_excelWebRenderer$nov$ewaCtl$m_workbookContextJson"]', { timeout: 60000 });
+        console.log('Page loaded successfully.');
 
+        // Click on the button with text "Oppilaitos"
+        await page.evaluate(() => {
+            const buttons = document.querySelectorAll('.ewr-slicer-header-button');
+            for (const button of buttons) {
+                if (button.textContent.trim() === 'Oppilaitos') {
+                    button.click();
+                    break;
+                }
+            }
+        });
+
+        console.log('Button "Oppilaitos" clicked.');
+
+        // Wait for some time before continuing (you can adjust this as needed)
+        await new Promise(resolve => setTimeout(resolve, 4000)); // Wait for 10 seconds
+
+        // Click on the button with text "Koulutuskeskus Salpaus"
+        await page.evaluate(() => {
+            const buttons = document.querySelectorAll('.ewr-slicer-header-button');
+            for (const button of buttons) {
+                if (button.textContent.trim() === 'Koulutuskeskus Salpaus') {
+                    button.click();
+                    break;
+                }
+            }
+        });
+
+        console.log('Button "Koulutuskeskus Salpaus" clicked.');
+
+        // Wait for some time before continuing (you can adjust this as needed)
+        await new Promise(resolve => setTimeout(resolve, 4000)); // Wait for 10 seconds
+
+        const sessionIdInput = await page.waitForSelector('input[name="m_excelWebRenderer$ewaCtl$m_workbookContextJson"]', { timeout: 4000 });
+        
         const sessionId = await sessionIdInput.evaluate(element => {
             const value = element.value;
             if (value) {
@@ -23,6 +57,7 @@ async function getSessionId(url) {
         await browser.close();
 
         return sessionId;
+        
     } catch (error) {
         console.error('Error:', error);
         await browser.close();
