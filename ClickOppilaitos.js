@@ -10,8 +10,8 @@ async function clickOppilaitosElement() {
         await driver.get('https://vipunen.fi/fi-fi/Raportit/Ammatillinen%20koulutus%20-%20ty%C3%B6llistyminen%20ja%20jatko-opinnot%20-%20tilastovuosi.xlsb?Web=1');
         console.log('Page loaded successfully.');
 
-        // Wait for 5 seconds before clicking the Oppilaitos element
-        await driver.sleep(5000);
+        // Wait for 10 seconds before clicking the Oppilaitos element
+        await driver.sleep(10000);
 
         // Wait for the Oppilaitos element to be located and clickable
         const oppilaitosElement = await driver.wait(until.elementLocated(By.xpath('//*[@id="m_excelWebRenderer_nov_ewaCtl__2_Oppilaitos_21_0"]')), 15000);
@@ -22,11 +22,13 @@ async function clickOppilaitosElement() {
         await oppilaitosElement.click();
         console.log('Oppilaitos element clicked.');
 
-        // Wait for 4 seconds
-        await driver.sleep(4000);
+        // Wait for 15 seconds before scrolling to the "Koulutuskeskus Salpaus" part
+        await driver.sleep(15000);
 
-        console.log('Waiting for 4 seconds after clicking.');
 
+       const koulutuskeskusSalpausElement = await driver.wait(until.elementLocated(By.xpath('//*[@id="ctl00_KoulutuskeskusSalpaus25"]')), 15000);
+       await driver.wait(until.elementIsVisible(oppilaitosElement), 15000);
+       await driver.wait(until.elementIsEnabled(oppilaitosElement), 15000);
         // You can add further actions here if needed
     } catch (error) {
         console.error('Error:', error);
