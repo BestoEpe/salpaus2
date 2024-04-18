@@ -10,6 +10,9 @@ async function clickOppilaitosElement() {
         await driver.get('https://vipunen.fi/fi-fi/Raportit/Ammatillinen%20koulutus%20-%20ty%C3%B6llistyminen%20ja%20jatko-opinnot%20-%20tilastovuosi.xlsb?Web=1');
         console.log('Page loaded successfully.');
 
+        // Wait for 5 seconds before clicking the Oppilaitos element
+        await driver.sleep(5000);
+
         // Wait for the Oppilaitos element to be located and clickable
         const oppilaitosElement = await driver.wait(until.elementLocated(By.xpath('//*[@id="m_excelWebRenderer_nov_ewaCtl__2_Oppilaitos_21_0"]')), 15000);
         await driver.wait(until.elementIsVisible(oppilaitosElement), 15000);
