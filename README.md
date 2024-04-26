@@ -11,8 +11,6 @@ Tämä on yksinkertainen Selenium-skripti, joka automatisoi vierityksen tietylle
 
 ## Huomioita
 
-- Tämä skripti on tarkoitettu esimerkiksi koulutustarkoituksiin ja siinä voi olla sovelluskohtaisia riippuvuuksia.
-- Muista varmistaa, että sinulla on oikeudet ja lupa käyttää automaatiota verkkosivulla.
 - Skripti on tarkoitettu ajettavaksi ympäristössä, jossa on asennettuna Chrome-selain ja Node.js.
 
 ## Sovellus
