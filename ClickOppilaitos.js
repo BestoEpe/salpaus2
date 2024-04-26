@@ -10,10 +10,10 @@ async function clickBelowOppilaitosAndScroll() {
         await driver.get('https://vipunen.fi/fi-fi/Raportit/Ammatillinen%20koulutus%20-%20ty%C3%B6llistyminen%20ja%20jatko-opinnot%20-%20tilastovuosi.xlsb?Web=1');
         console.log('Page loaded successfully.');
 
-        await driver.sleep(10000);
+        await driver.sleep(6000);
 
         // etsi Oppilaitos
-        const oppilaitosElement = await driver.wait(until.elementLocated(By.xpath('//*[@id="m_excelWebRenderer_nov_ewaCtl__2_Oppilaitos_21_0"]')), 15000);
+        const oppilaitosElement = await driver.wait(until.elementLocated(By.xpath('//*[@id="m_excelWebRenderer_nov_ewaCtl__2_Oppilaitos_21_0"]')), 8000);
 
         // etsi Oppilaitos
         const oppilaitosRect = await oppilaitosElement.getRect();
@@ -24,7 +24,7 @@ async function clickBelowOppilaitosAndScroll() {
         await oppilaitosElement.click();
         console.log('Oppilaitos element clicked.');
 
-        await driver.sleep(3000);
+        await driver.sleep(2000);
 
         // laske koordinaatit
         const offsetX = 0; 
@@ -36,7 +36,7 @@ async function clickBelowOppilaitosAndScroll() {
         await driver.actions({ bridge: true }).move({ x: clickX, y: clickY }).click().perform();
         console.log('Clicked a few pixels below the original position of the oppilaitos element.');
 
-        await driver.sleep(3000);
+        await driver.sleep(2000);
 
         
         const actions = driver.actions({ bridge: true });
@@ -50,17 +50,17 @@ async function clickBelowOppilaitosAndScroll() {
             await actions.sendKeys(Key.DOWN).perform();
             console.log('Page scrolled downward.');
             scrollCount++;
-            await driver.sleep(800); 
+            await driver.sleep(400); 
         }
 
         
-        await driver.sleep(1500);
+        await driver.sleep(1000);
 
         // mene Salpauksen kohdalle
         for (let i = 0; i < 3; i++) {
             await driver.actions({ bridge: true }).sendKeys(Key.UP).perform();
             console.log('Pressed the up arrow key.');
-            await driver.sleep(1000); 
+            await driver.sleep(700); 
         }
 
         // paina Salpausta
