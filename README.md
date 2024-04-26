@@ -39,5 +39,3 @@ package.json-tiedoston muokkaus:
   "author": "Erno & Iiro",
   "license": "MIT"
 }
-Lisenssi
-Tätä skriptiä voi käyttää ja muokata vapaasti henkilökohtaisiin ja kaupallisiin tarkoituksiin, mutta ilman takuuta.
