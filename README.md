@@ -18,7 +18,7 @@ Tämä on yksinkertainen Selenium-skripti, joka automatisoi vierityksen tietylle
 Tämän skriptin pohjalta tein myös sovelluksen käyttäen Electronia. Sovellus on nimeltään "Selenium Script Runner" ja se on paketoitu Windows-ympäristöön (`selenium-script-runner-win32-x64`). Sovelluksen avulla voit suorittaa Selenium-skriptejä tupla-klikkaamalla kuvaketta.
 
 Sovelluksen paketointi komennolla:
-electron-packager . selenium-script-runner --platform=win32 --arch=x64 --electron-version=v30.0.1 --main=app.js
+`electron-packager . selenium-script-runner --platform=win32 --arch=x64 --electron-version=v30.0.1 --main=app.js`
 
 
 package.json-tiedoston muokkaus:
