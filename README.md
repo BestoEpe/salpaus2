@@ -1,6 +1,12 @@
-# Selenium-skripti raporttisivun automaattiseen vieritykseen ja valinnan suorittamiseen
+# projekti tiivistettynä
 
-Tämä on yksinkertainen Selenium-skripti, joka automatisoi vierityksen tietylle verkkosivulle ja suorittaa valinnan. Skripti käyttää Node.js-pohjaista Selenium WebDriveria ja Chrome-selainta.
+Automatisoitu excel service toiminto joka avaa kohdan koulutuskeskus salpaus niin että avaat työpöytä sovelluksen ja se run commendaa node koodin
+
+# Teknologiat
+
+- Node.js
+- Selenium-webdriver
+- Selenium-chromedriver
 
 ## Käyttö
 
@@ -15,7 +21,7 @@ Tämä on yksinkertainen Selenium-skripti, joka automatisoi vierityksen tietylle
 
 ## Sovellus
 
-Tämän skriptin pohjalta tein myös sovelluksen käyttäen Electronia. Sovellus on nimeltään "Selenium Script Runner" ja se on paketoitu Windows-ympäristöön (`selenium-script-runner-win32-x64`). Sovelluksen avulla voit suorittaa Selenium-skriptejä tupla-klikkaamalla kuvaketta.
+Tämän skriptin pohjalta on myös tehty sovelluksen käyttäen Electronia. Sovellus on nimeltään "Selenium Script Runner" ja se on paketoitu Windows-ympäristöön (`selenium-script-runner-win32-x64`). Sovelluksen avulla voit suorittaa Selenium-skriptejä tupla-klikkaamalla kuvaketta.
 
 Sovelluksen paketointi komennolla:
 `electron-packager . selenium-script-runner --platform=win32 --arch=x64 --electron-version=v30.0.1 --main=app.js`
